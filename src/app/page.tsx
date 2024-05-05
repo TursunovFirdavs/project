@@ -8,7 +8,7 @@ export default function Home() {
     <div>
       <Navbar/>
       <div className="bg-secondary-light">
-      <div className="flex justify-between container pt-8">
+      <div className="flex justify-between container py-8">
         <Category/>
         <Carousel/>
       </div>
