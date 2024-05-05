@@ -1,9 +1,17 @@
+'use client'
+
+import { useGetCategories } from '@/providers/query/useGetCategories';
 import React from 'react'
 import { TfiMenuAlt } from "react-icons/tfi";
 
 const data = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 
 export default function Category() {
+
+    const { data: category } = useGetCategories()
+    console.log(category);
+    
+
     return (
         <div className='max-w-[275px] w-full bg-white px-6 py-4 rounded-sm overflow-hidden'>
             <div className='flex items-center gap-4 pb-4'>

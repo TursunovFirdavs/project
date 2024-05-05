@@ -13,7 +13,7 @@ const Navbar = () => {
                     <li className='pl-5 ml-4 hover:underline decoration-1'><Link href={'/'}>My account</Link></li>
                     <li className='pl-5 ml-4 hover:underline decoration-1 border-l-2'><Link href={'/'}>Checkout</Link></li>
                     <li className='pl-5 ml-4 hover:underline decoration-1 border-l-2'><Link href={'/'}>Shop</Link></li>
-                    <li className='pl-5 ml-4 hover:underline decoration-1 border-l-2'><Link href={'/'}>Wishlist</Link></li>
+                    <li className='pl-5 ml-4 hover:underline decoration-1 border-l-2'><Link href={'/login'}>Login</Link></li>
                 </ul>
             </div>
             <div className='flex justify-between items-center container py-7 border-b'>
