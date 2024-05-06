@@ -1,10 +1,13 @@
+'use client'
 import Link from 'next/link'
 import React from 'react'
 import { SlLayers } from "react-icons/sl";
 import { FaRegStar } from "react-icons/fa";
 import { SlHandbag } from "react-icons/sl";
+import { useGetCategories } from '@/service/query/useGetCategories';
 
 const Navbar = () => {
+    const { data } = useGetCategories()
     return (
         <div>
             <div className='container flex h-[48px] items-center justify-between text-secondary-dark border-b'>
@@ -28,11 +31,9 @@ const Navbar = () => {
                 <form className='border-2 border-secondary-yellow overflow-hidden max-w-[640px] w-full rounded-[30px] flex justify-between items-center'>
                     <select className='max-w-[140px] w-full pl-5 pr-2.5 outline-none' name="" id="">
                         <option value="">All category</option>
-                        <option value="">salom</option>
-                        <option value="">salom</option>
-                        <option value="">salom</option>
-                        <option value="">salom</option>
-                        <option value="">salom</option>
+                        {data?.results.map((item: any) => (
+                            <option value="">{item.title}</option>
+                        ))}
                     </select>
                     <input className='flex-1 pl-3 border-l-2 ml-2.5 outline-none' type="text" placeholder='Search Products...' />
                     <button className='py-3 w-[120px] px-2.5 bg-secondary-yellow'>Search</button>

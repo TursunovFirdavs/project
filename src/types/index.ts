@@ -8,3 +8,12 @@ export interface subCategory {
     image: string,
     title: string
 }
+
+export interface banner {
+    created_at: string,
+    description: string,
+    id: number,
+    image: string,
+    title: string,
+    updated_at: string
+}

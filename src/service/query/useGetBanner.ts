@@ -3,11 +3,11 @@
 import { request } from "@/api/request";
 import { useQuery } from "@tanstack/react-query";
 
-export const useGetSub = () => {
+export const useGetBanner = () => {
     return useQuery({
-        queryKey: ['categories'],
+        queryKey: ['banner'],
         queryFn: () => request
-            .get('/category/')
+            .get('/banner/')
             .then(res => res.data)
     })
 }

@@ -1,3 +1,4 @@
+'use client'
 import React from "react"
 import {
     Carousel,
@@ -6,15 +7,20 @@ import {
     CarouselNext,
     CarouselPrevious,
 } from "@/components/ui/carousel"
+import { useGetBanner } from "@/service/query/useGetBanner";
+import { banner } from "@/types";
 
 export default function () {
-    return (
+  const { data, isLoading } = useGetBanner()
+  console.log(data);
+  
+    return isLoading ? <div className='w-[1155px] h-[525px] flex items-center justify-center'><div className="lds-ripple"><div></div><div></div></div></div> : (
       <div className="max-w-[1155px] rounded-sm overflow-hidden w-full">
         <Carousel>
           <CarouselContent>
-            <CarouselItem><img className="w-full h-[525px]" src="https://www.bannerbatterien.com/upload/filecache/Banner-Batterien-Windrder3-web_d4407b587e4bc9786e4e8b67530c854c.webp" alt="" /></CarouselItem>
-            <CarouselItem><img className="w-full h-[525px]" src="https://www.bannerbatterien.com/upload/filecache/Banner-Batterien-Windrder3-web_d4407b587e4bc9786e4e8b67530c854c.webp" alt="" /></CarouselItem>
-            <CarouselItem><img className="w-full h-[525px]" src="https://www.bannerbatterien.com/upload/filecache/Banner-Batterien-Windrder3-web_d4407b587e4bc9786e4e8b67530c854c.webp" alt="" /></CarouselItem>
+            {data?.results?.map((item: banner) => (
+              <img className="w-full h-[525px]" src={item.image} alt="" />
+            ))}
           </CarouselContent>
           <CarouselPrevious />
           <CarouselNext />

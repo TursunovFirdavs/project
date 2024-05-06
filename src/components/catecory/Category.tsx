@@ -14,6 +14,7 @@ import {
     NavigationMenuViewport,
 } from "@/components/ui/navigation-menu"
 import { subCategory } from '@/types';
+import Link from 'next/link';
 
 export default function Category() {
 
@@ -27,21 +28,24 @@ export default function Category() {
                 <TfiMenuAlt className='text-xl' />
                 <p className='text-[14px] font-semibold'>SHOP BY CATEGORY</p>
             </div>
-            {data?.results.map((item: any) => (
-                <NavigationMenu>
+            {data?.results.slice(0, 9).map((item: any) => (
+                <NavigationMenu key={item.id}>
                     <NavigationMenuList>
                         <NavigationMenuItem>
                             <NavigationMenuTrigger>
-                                <div key={item.id} className='border-t py-2 flex items-center w-[210px] gap-3'>
+                                <Link href={`/category/:${item.id}`} key={item.id} className='border-t py-2 flex items-center w-[210px] gap-3'>
                                     <img className='w-7' src={item.image} alt="" />
                                     <p>{item.title}</p>
-                                </div>
+                                </Link>
                             </NavigationMenuTrigger>
                             <NavigationMenuContent>
                                 <NavigationMenuLink>
-                                    <div>
+                                    <div className={`w-[400px] ${item.children.length && 'p-10'} flex flex-wrap gap-y-1.5`}>
                                         {item.children?.map((sub: subCategory) => (
-                                            <p>{sub.title}</p>
+                                            <div className='flex gap-2 items-center w-[160px]' key={sub.id}>
+                                                <img className='w-5' src={sub.image} alt="" />
+                                                <p className='text-sm'>{sub.title}</p>
+                                            </div>
                                         ))}
                                     </div>
                                 </NavigationMenuLink>
