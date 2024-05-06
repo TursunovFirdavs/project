@@ -15,7 +15,7 @@ import {
 } from "@/components/ui/form"
 import { Input } from "@/components/ui/input"
 import { loginType } from "@/types"
-import { useLogin } from "@/providers/mutation/useLogin"
+import { useLogin } from "@/service/mutation/useLogin"
 import Cookies from "js-cookie"
 import { useRouter } from "next/navigation"
 
