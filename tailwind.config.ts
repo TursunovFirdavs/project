@@ -35,6 +35,7 @@ const config = {
         'secondary-dark': '#666666',
         'secondary-yellow': '#FCB700',
         'secondary-light': '#F5F6F9',
+        'secondary-blue': '#0066C0',
         destructive: {
           DEFAULT: "hsl(var(--destructive))",
           foreground: "hsl(var(--destructive-foreground))",
