@@ -43,7 +43,7 @@ const TopCategory = () => {
                     ))}
             </div>
             <div className='flex justify-between'>
-                <div className='max-w-[710px] w-full'>
+                <div className='max-w-[720px] w-full'>
                     <div className='flex items-center gap-5 w-full mt-[50px] pb-8'>
                         <h2 className='text-[24px] font-[500]'>Top Flash <span className='font-[200]'>Deals</span></h2>
                         <div className='h-[1px] bg-gray-300 flex-1'></div>
@@ -62,14 +62,14 @@ const TopCategory = () => {
                         </div>
                     </div>
                 </div>
-                <div className='max-w-[710px] w-full'>
+                <div className='max-w-[720px] w-full'>
                     <div className='flex items-center gap-5 w-full mt-[50px] pb-8'>
                         <h2 className='text-[24px] font-[500]'>Recent <span className='font-[200]'>Products</span></h2>
                         <div className='h-[1px] bg-gray-300 flex-1'></div>
                     </div>
                     <div className='flex justify-between'>
-                        {imgs?.map((item:string) => (
-                            <div className='rounded-sm overflow-hidden bg-white text-center'>
+                        {imgs?.map((item: string) => (
+                            <div className='rounded-sm overflow-hidden bg-white text-center px-1'>
                                 <img className='w-[217px]' src={item} alt="" />
                                 <p className='text-[12px] text-secondary-dark text-center'>Digital, Game & Toys</p>
                                 <p className='text-[14px] text-secondary-blue mt-1  mb-2'>Recliner syntheti deck chair</p>
@@ -80,8 +80,17 @@ const TopCategory = () => {
                     </div>
                 </div>
             </div>
-            <div>
-                
+            <div className='flex justify-between mt-[50px] pb-10'>
+                <div className="w-[720px] h-[213px] relative banner">
+                    <img className="w-[720px]" src="https://demo.lion-themes.net/amera/wp-content/uploads/2019/07/banner14.jpg" alt="" />
+                    <div className="absolute horizantal top-0 left-[50%] translate-x-[-50%] w-0 bg-white/20 h-full transition-all duration-1000"></div>
+                    <div className="absolute vertical top-[50%] left-0 translate-y-[-50%] w-full bg-white/20 h-0 transition-all duration-1000"></div>
+                </div>
+                <div className="w-[720px] h-[213px] relative banner">
+                    <img className="w-[720px]" src="https://demo.lion-themes.net/amera/wp-content/uploads/2019/07/banner15.jpg" alt="" />
+                    <div className="absolute horizantal top-0 left-[50%] translate-x-[-50%] w-0 bg-white/20 h-full transition-all duration-1000"></div>
+                    <div className="absolute vertical top-[50%] left-0 translate-y-[-50%] w-full bg-white/20 h-0 transition-all duration-1000"></div>
+                </div>
             </div>
         </div>
     )
