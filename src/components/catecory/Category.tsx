@@ -33,7 +33,7 @@ export default function Category() {
                     <NavigationMenuList>
                         <NavigationMenuItem>
                             <NavigationMenuTrigger>
-                                <Link href={`/category/:${item.id}`} key={item.id} className='border-t py-2 flex items-center w-[210px] gap-3'>
+                                <Link href={`/category/${item.id}`} key={item.id} className='border-t py-2 flex items-center w-[210px] gap-3'>
                                     <img className='w-7' src={item.image} alt="" />
                                     <p>{item.title}</p>
                                 </Link>

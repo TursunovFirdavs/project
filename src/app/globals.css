@@ -129,3 +129,12 @@
       opacity: 0;
     }
   }
+
+  .banner:hover > .horizantal {
+    width: 100%;
+  }
+
+  .banner:hover > .vertical {
+    height: 100%;
+  }
+  
