@@ -4,6 +4,8 @@ import { useGetCategories } from '@/service/query/useGetCategories'
 import { Skeleton } from "@/components/ui/skeleton"
 import { useGetSingleSub } from '@/service/query/useGetSingleSub'
 import { FiStar } from "react-icons/fi";
+import Item from './Item'
+import Banner from '../banner/Banner'
 
 
 const TopCategory = () => {
@@ -21,6 +23,12 @@ const TopCategory = () => {
         'https://demo.lion-themes.net/amera/wp-content/uploads/2019/08/35.jpg',
         'https://demo.lion-themes.net/amera/wp-content/uploads/2019/08/34.jpg',
         'https://demo.lion-themes.net/amera/wp-content/uploads/2019/08/33.jpg'
+    ]
+
+    const banner = [
+        'https://demo.lion-themes.net/amera/wp-content/uploads/2019/07/banner16.jpg',
+        'https://demo.lion-themes.net/amera/wp-content/uploads/2019/07/banner17.jpg',
+        'https://demo.lion-themes.net/amera/wp-content/uploads/2019/07/banner18.jpg'
     ]
 
     return (
@@ -80,6 +88,7 @@ const TopCategory = () => {
                     </div>
                 </div>
             </div>
+
             <div className='flex justify-between mt-[50px] pb-10'>
                 <div className="w-[720px] h-[213px] relative banner">
                     <img className="w-[720px]" src="https://demo.lion-themes.net/amera/wp-content/uploads/2019/07/banner14.jpg" alt="" />
@@ -91,6 +100,49 @@ const TopCategory = () => {
                     <div className="absolute horizantal top-0 left-[50%] translate-x-[-50%] w-0 bg-white/20 h-full transition-all duration-1000"></div>
                     <div className="absolute vertical top-[50%] left-0 translate-y-[-50%] w-full bg-white/20 h-0 transition-all duration-1000"></div>
                 </div>
+            </div>
+
+            <div className='flex items-center gap-5 w-full mt-[50px] pb-8'>
+                <h2 className='text-[24px] font-[500]'>Computer & Desktop  <span className='font-[200]'>Products</span></h2>
+                <div className='h-[1px] bg-gray-300 flex-1'></div>
+                <div className='flex gap-4 text-[14px]'>
+                    <p>Digital</p>
+                    <p>Game & Toy</p>
+                    <p>Smart Phones</p>
+                </div>
+            </div>
+            <div className='flex items-center justify-between gap-5'>
+                <img className='max-w-[280px]' src="https://demo.lion-themes.net/amera/wp-content/uploads/2019/07/img-tab1.jpg" alt="" />
+                <Item />
+            </div>
+            <div className='flex items-center gap-5 w-full mt-[50px] pb-8'>
+                <h2 className='text-[24px] font-[500]'>Computer & Desktop  <span className='font-[200]'>Products</span></h2>
+                <div className='h-[1px] bg-gray-300 flex-1'></div>
+                <div className='flex gap-4 text-[14px]'>
+                    <p>Digital</p>
+                    <p>Game & Toy</p>
+                    <p>Smart Phones</p>
+                </div>
+            </div>
+            <div className='flex items-center justify-between gap-5'>
+                <Item />
+                <img className='max-w-[280px]' src="https://demo.lion-themes.net/amera/wp-content/uploads/2019/07/cate12.jpg" alt="" />
+            </div>
+            <div className='flex items-center gap-5 w-full mt-[50px] pb-8'>
+                <h2 className='text-[24px] font-[500]'>Computer & Desktop  <span className='font-[200]'>Products</span></h2>
+                <div className='h-[1px] bg-gray-300 flex-1'></div>
+                <div className='flex gap-4 text-[14px]'>
+                    <p>Digital</p>
+                    <p>Game & Toy</p>
+                    <p>Smart Phones</p>
+                </div>
+            </div>
+            <div className='flex items-center justify-between gap-5'>
+                <img className='max-w-[280px]' src="https://demo.lion-themes.net/amera/wp-content/uploads/2019/07/cate11.jpg" alt="" />
+                <Item />
+            </div>
+            <div className='flex justify-between py-[50px]'>
+                <Banner data={banner} />
             </div>
         </div>
     )
