@@ -6,18 +6,22 @@ import { useGetSingleSub } from '@/service/query/useGetSingleSub'
 import { FiStar } from "react-icons/fi";
 import Item from './Item'
 import Banner from '../banner/Banner'
+import { useGetProductVariant } from '@/service/query/useGetProductVariant'
 
 
 const TopCategory = () => {
     const { data, isLoading } = useGetCategories()
 
-    // const topFlash = data?.results?.filter((item: any) => item.title == 'Household Technique')
-    // const recentProduct = topFlash?.map((item: any) => item.children[3])
-    // const { id } = recentProduct?.find((item: any) => item)
-    // console.log(id);
-
-    // const { data: product } = useGetSingleSub(id)
-    // console.log(product);
+    console.log(data);
+    const texnoSub = data?.results.find((item:any) => item.title == "Home & Kitchen")
+    const texnoId = texnoSub?.children?.find((item:any) => item.title == "Digitalsub")
+    const { data: texno } = useGetProductVariant(texnoId?.id)
+    
+    const chairSub = data?.results.find((item:any) => item.title == "Game & Toy")
+    const chairId = chairSub?.children?.find((item:any) => item.title == "Smartphones")
+    const { data: chair } = useGetProductVariant(chairId?.id)
+    console.log(chair);
+    
 
     const imgs = [
         'https://demo.lion-themes.net/amera/wp-content/uploads/2019/08/35.jpg',
@@ -113,7 +117,7 @@ const TopCategory = () => {
             </div>
             <div className='flex items-center justify-between gap-5'>
                 <img className='max-w-[280px]' src="https://demo.lion-themes.net/amera/wp-content/uploads/2019/07/img-tab1.jpg" alt="" />
-                <Item />
+                <Item data={texno?.results} />
             </div>
             <div className='flex items-center gap-5 w-full mt-[50px] pb-8'>
                 <h2 className='text-[24px] font-[500]'>Computer & Desktop  <span className='font-[200]'>Products</span></h2>
@@ -125,7 +129,7 @@ const TopCategory = () => {
                 </div>
             </div>
             <div className='flex items-center justify-between gap-5'>
-                <Item />
+                <Item  />
                 <img className='max-w-[280px]' src="https://demo.lion-themes.net/amera/wp-content/uploads/2019/07/cate12.jpg" alt="" />
             </div>
             <div className='flex items-center gap-5 w-full mt-[50px] pb-8'>

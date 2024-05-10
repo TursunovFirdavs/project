@@ -1,23 +1,21 @@
-import React from 'react'
+'use client'
 
-const Item = () => {
-    const data = [
-        'https://demo.lion-themes.net/amera/wp-content/uploads/2019/08/6.jpg',
-        'https://demo.lion-themes.net/amera/wp-content/uploads/2019/08/9.jpg',
-        'https://demo.lion-themes.net/amera/wp-content/uploads/2019/08/20.jpg',
-        'https://demo.lion-themes.net/amera/wp-content/uploads/2019/08/13-1.jpg',
-        'https://demo.lion-themes.net/amera/wp-content/uploads/2019/08/10.jpg',
-        'https://demo.lion-themes.net/amera/wp-content/uploads/2019/08/30.jpg'
-    ]
+import React, { useState } from 'react'
+
+const Item: React.FC<any> = ({data}) => {
+    const[hover, setHover] = useState(false)
+    console.log(data)
+    
+    
   return (
     <div className='flex flex-wrap justify-between gap-4'>
-        {data?.map((item:string) => (
-            <div className='w-[374px] bg-white rounded-sm flex items-center py-3.5 px-2.5' key={item}>
-                <img className='w-[130px]' src={item} alt="" />
+        {data?.slice(0,6)?.map((item:any) => (
+            <div onMouseOver={() => setHover(true)} className='w-[374px] bg-white rounded-sm flex gap-3 items-center py-3.5 px-2.5' key={item.id}>
+                <img className='w-[130px]' src={item.images[0].image} alt="" />
                 <div>
                     <p className='text-[12px] text-secondary-dark'>Digital, Game & Toys, Women</p>
-                    <p className='text-[14px] text-secondary-blue pt-1 pb-2.5'>Override The Digital Divide</p>
-                    <p className='text-[18px] font-medium'>$3.00</p>
+                    <p className='text-[14px] text-secondary-blue pt-1 pb-2.5'>{item.title}</p>
+                    <p className='text-[18px] font-medium'>{`$${item.price}`}</p>
                 </div>
             </div>
         ))}
