@@ -1,6 +1,6 @@
 import Banner from "@/components/banner/Banner";
 import Carousel from "@/components/carousel/Carousel";
-import Category from "@/components/catecory/Category";
+import Categories from "@/components/catecory/Categories";
 import TopCategory from "@/components/top-category/Top-category";
 import Image from "next/image";
 
@@ -13,7 +13,7 @@ export default function Home() {
   return (
     <div className="bg-secondary-light">
       <div className="flex justify-between container py-8">
-        <Category />
+        <Categories />
         <Carousel />
       </div>
       <div className="container flex justify-between">

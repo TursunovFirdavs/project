@@ -16,7 +16,7 @@ import {
 import { subCategory } from '@/types';
 import Link from 'next/link';
 
-export default function Category() {
+export default function Categories() {
 
     const { data, isLoading } = useGetCategories()
     console.log(data);

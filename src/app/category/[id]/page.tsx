@@ -1,13 +1,20 @@
+import Categories from '@/components/catecory/Categories';
 import React from 'react'
+import SubCategories from '../components/Sub-categories';
 
-const Category = ({ params } : any) => {
-  console.log(params);
-  console.log(1);
-  
-  
+export default function Category(props : any) {
+  const id = props.params
+  console.log(id);
   return (
-    <div>page</div>
+    <div className='container bg-secondary-light'>
+      <div className='py-8 flex gap-10'>
+        <div>
+        <Categories/>
+        </div>
+        <div>
+          <SubCategories id={props?.params}/>
+        </div>
+      </div>
+    </div>
   )
 }
-
-export default Category
