@@ -32,9 +32,11 @@ const SubCategories = ({ id }: any) => {
             }
             <div>
                 <h3>Top Products</h3>
-                {allProducts?.results?.map((item:any) => (
-                    <Card {...item}/>
-                ))}
+                <div className='flex flex-wrap justify-between gap-y-[35px]'>
+                    {allProducts?.results?.slice(0,16)?.map((item:any) => (
+                        <Card {...item}/>
+                    ))}
+                </div>
             </div>
         </div>
     )
