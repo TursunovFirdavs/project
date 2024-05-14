@@ -42,10 +42,10 @@ export default function Categories() {
                                 <NavigationMenuLink>
                                     <div className={`w-[400px] ${item.children.length && 'p-10'} flex flex-wrap gap-y-1.5`}>
                                         {item.children?.map((sub: subCategory) => (
-                                            <div className='flex gap-2 items-center w-[160px]' key={sub.id}>
+                                            <Link href={`/sub/${sub.id}`} className='flex gap-2 items-center w-[160px]' key={sub.id}>
                                                 <img className='w-5' src={sub.image} alt="" />
                                                 <p className='text-sm'>{sub.title}</p>
-                                            </div>
+                                            </Link>
                                         ))}
                                     </div>
                                 </NavigationMenuLink>
