@@ -17,3 +17,8 @@ export interface banner {
     title: string,
     updated_at: string
 }
+
+export interface product_images {
+    image: string,
+    id: number
+}

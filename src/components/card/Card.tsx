@@ -1,4 +1,5 @@
 'use client'
+import Link from 'next/link';
 import React, { useState } from 'react'
 import { FiStar } from 'react-icons/fi';
 
@@ -7,7 +8,7 @@ const Card = (item: any) => {
     console.log(visible);
 
     return (
-        <div onMouseEnter={() => setVisible(true)} onMouseLeave={() => setVisible(false)} className={`max-w-[255px] w-full ${visible ? 'shadow-md' : 'shadow-sm'} bg-white pb-3 rounded-md`}>
+        <Link href={`/product/${item?.id}`} onMouseEnter={() => setVisible(true)} onMouseLeave={() => setVisible(false)} className={`max-w-[255px] w-full ${visible ? 'shadow-md' : 'shadow-sm'} bg-white pb-3 rounded-md`}>
             <img className='w-[200px] py-6 h-[200px] object-contain m-auto' src={visible && item?.images[1] ? item?.images[1]?.image : item?.images[0]?.image} alt="" />
             <p className='text-center text-[18px] text-secondary-blue'>{`${item?.title?.length > 20 ? item?.title?.slice(0, 20) : item?.title + '...'}`}</p>
             <p className='text-center px-2.5 text-[14px] pt-1.5 pb-2.5 text-secondary-dark'>{item?.other_detail?.slice(3, 42)}</p>
@@ -21,7 +22,7 @@ const Card = (item: any) => {
 
                 </div>
             }
-        </div>
+        </Link>
     )
 }
 

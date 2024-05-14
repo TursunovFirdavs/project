@@ -137,4 +137,13 @@
   .banner:hover > .vertical {
     height: 100%;
   }
+
+  .wishlist:hover .w-text {
+    color: #FCB700;
+    transition: 0.2s;
+  }
   
+  .wishlist:hover .icon {
+    color: #FCB700;
+    transition: 0.2s;
+  }
