@@ -14,20 +14,22 @@ const SubProducts = ({ id }: any) => {
 
 
 
-    return isLoading ? <Spin/> : (
+    return isLoading ? <Spin /> : (
         <div>
             <h2 className='text-[14px] text-secondary-dark font-medium'>{`Home  /  ${data?.parent?.title}  /  ${data?.title}`}</h2>
             <div>
-                {product?.results?.length ?
+                {!product?.results?.length && !isLoading ?
+                    <div className='flex flex-col h-[65vh] w-[70vw] items-center justify-center'>
+                        <img src="https://olcha.uz/_nuxt/empty-img.3a4aef3b.png" alt="" />
+                        <h3 className='mb-6 font-semibold text-3xl mt-5'>{`There is no product in the ${data?.title}`}</h3>
+                    </div>
+                    :
                     <div className='flex flex-wrap gap-[35px] mt-5'>
                         {product?.results?.map((item: any) => (
                             <Card {...item} />
                         ))}
-                    </div> :
-                    <div className='flex flex-col h-[65vh] w-[70vw] items-center justify-center'>
-                    <img src="https://olcha.uz/_nuxt/empty-img.3a4aef3b.png" alt="" />
-                    <h3 className='mb-6 font-semibold text-3xl mt-5'>{`There is no product in the ${data?.title}`}</h3>
-                  </div>
+                    </div>
+
                 }
             </div>
         </div>
