@@ -12,7 +12,6 @@ import { useGetProductVariant } from '@/service/query/useGetProductVariant'
 const TopCategory = () => {
     const { data, isLoading } = useGetCategories()
 
-    console.log(data);
     const texnoSub = data?.results.find((item:any) => item.title == "Home & Kitchen")
     const texnoId = texnoSub?.children?.find((item:any) => item.title == "Digitalsub")
     const { data: texno } = useGetProductVariant(texnoId?.id)
@@ -20,7 +19,6 @@ const TopCategory = () => {
     const chairSub = data?.results.find((item:any) => item.title == "Game & Toy")
     const chairId = chairSub?.children?.find((item:any) => item.title == "Smartphones")
     const { data: chair } = useGetProductVariant(chairId?.id)
-    console.log(chair);
     
 
     const imgs = [

@@ -19,7 +19,6 @@ import Link from 'next/link';
 export default function Categories() {
 
     const { data, isLoading } = useGetCategories()
-    console.log(data);
 
 
     return isLoading ? <div className='w-[275px] h-[525px] flex items-center justify-center'><div className="lds-ripple"><div></div><div></div></div></div> : (

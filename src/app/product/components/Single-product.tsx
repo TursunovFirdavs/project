@@ -12,9 +12,7 @@ import { IoLogoGoogleplus } from "react-icons/io";
 
 const SingleProduct = ({ id }: any) => {
     const [select, setSelect] = useState(0)
-    console.log(id);
     const { data } = useGetSingleVariant(id)
-    console.log(data);
 
 
 

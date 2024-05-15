@@ -12,7 +12,6 @@ import { banner } from "@/types";
 
 export default function () {
   const { data, isLoading } = useGetBanner()
-  console.log(data);
   
     return isLoading ? <div className='w-[1155px] h-[525px] flex items-center justify-center'><div className="lds-ripple"><div></div><div></div></div></div> : (
       <div className="max-w-[1155px] rounded-sm overflow-hidden w-full">

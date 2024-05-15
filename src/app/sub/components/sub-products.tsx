@@ -6,11 +6,8 @@ import { useGetSingleSub } from '@/service/query/useGetSingleSub';
 import React from 'react'
 
 const SubProducts = ({ id }: any) => {
-    console.log(id);
     const { data, isLoading } = useGetSingleSub(id)
-    console.log(data);
     const { data: product } = useGetProductVariant(data?.id)
-    console.log(product);
 
 
 

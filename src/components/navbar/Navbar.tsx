@@ -2,7 +2,7 @@
 import Link from 'next/link'
 import React from 'react'
 import { SlLayers } from "react-icons/sl";
-import { FaRegStar } from "react-icons/fa";
+import { FaRegStar } from "react-icons/fa"; 
 import { SlHandbag } from "react-icons/sl";
 import { useGetCategories } from '@/service/query/useGetCategories';
 
@@ -47,10 +47,10 @@ const Navbar = () => {
                         <FaRegStar className='text-3xl' />
                         <p>Favorites</p>
                     </div>
-                    <div className='flex flex-col items-center'>
+                    <Link href={'/cart'} className='flex flex-col items-center'>
                         <SlHandbag className='text-3xl' />
                         <p>my Cart</p>
-                    </div>
+                    </Link>
                 </div>
             </div>
         </div>

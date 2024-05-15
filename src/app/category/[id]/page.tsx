@@ -4,7 +4,6 @@ import SubCategories from '../components/Sub-categories';
 
 export default function Category(props : any) {
   const id = props.params
-  console.log(id);
   return (
     <div className='container bg-secondary-light'>
       <div className='py-8 flex gap-10'>

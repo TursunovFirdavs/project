@@ -147,3 +147,7 @@
     color: #FCB700;
     transition: 0.2s;
   }
+
+  .cart-img {
+    background-image: url(https://demo.lion-themes.net/amera/wp-content/uploads/revslider/slider-4/3revo4.jpg);
+  }

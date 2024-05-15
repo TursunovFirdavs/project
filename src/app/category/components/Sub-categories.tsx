@@ -10,8 +10,6 @@ const SubCategories = ({ id }: any) => {
     const categoryId = id?.id
     const { data } = useGetSingleCategory(categoryId)
     const { data: allProducts } = useGetAllProduct()
-    console.log(data);
-    console.log(allProducts);
 
 
 

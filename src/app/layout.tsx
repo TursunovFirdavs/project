@@ -3,6 +3,7 @@ import { Rubik } from "next/font/google";
 import "./globals.css";
 import QueryProvider from "@/providers/query-provider";
 import Navbar from "@/components/navbar/Navbar";
+import ReduxProvider from "@/providers/redux-provider";
 
 const inter = Rubik({ subsets: ["latin"] });
 
@@ -18,12 +19,14 @@ export default function RootLayout({
 }>) {
   return (
     <QueryProvider>
+      <ReduxProvider>
       <html lang="en">
         <body className={inter.className}>
           <Navbar/>
           <main>{children}</main>
         </body>
       </html>
+      </ReduxProvider>
     </QueryProvider>
   );
 }
