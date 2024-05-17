@@ -1,9 +1,11 @@
 import { configureStore } from '@reduxjs/toolkit'
 import cart from './reducer/cart'
+import like from './reducer/like'
 
 export const store = configureStore({
     reducer: {
-        cart
+        cart,
+        like
     }
 })
 
