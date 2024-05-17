@@ -43,10 +43,10 @@ const Navbar = () => {
                         <SlLayers className='text-3xl' />
                         <p>Compare</p>
                     </div>
-                    <div className='flex flex-col items-center'>
+                    <Link href={'/liked'} className='flex flex-col items-center'>
                         <FaRegStar className='text-3xl' />
                         <p>Favorites</p>
-                    </div>
+                    </Link>
                     <Link href={'/cart'} className='flex flex-col items-center'>
                         <SlHandbag className='text-3xl' />
                         <p>my Cart</p>

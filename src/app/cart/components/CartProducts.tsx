@@ -20,7 +20,7 @@ const CartProducts = () => {
     }
 
     return (
-        cart.length ? <div className='mt-10 mb-[80px] flex justify-between'>
+        cart.length ? <div className='mt-10 mb-[80px] flex items-start justify-between'>
         <div className='max-w-[1000px] w-full'>
             <div className='flex border'>
                 <p className='max-w-[60px] w-full border px-3 py-[9px] text-[14px] font-semibold'></p>
