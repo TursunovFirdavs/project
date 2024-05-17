@@ -151,3 +151,7 @@
   .cart-img {
     background-image: url(https://demo.lion-themes.net/amera/wp-content/uploads/revslider/slider-4/3revo4.jpg);
   }
+
+  .tr {
+    transition:  1s;
+  }

@@ -4,6 +4,10 @@ import Link from 'next/link';
 import React, { useState } from 'react'
 import { FiStar } from 'react-icons/fi';
 import { useDispatch, useSelector } from 'react-redux';
+import { FaRegStar } from "react-icons/fa"; 
+import { IoEyeOutline } from "react-icons/io5";
+
+
 
 const Card = (item: any) => {
     const [visible, setVisible] = useState(false)
@@ -21,7 +25,7 @@ const Card = (item: any) => {
     }
 
     return (
-        <div onMouseEnter={() => setVisible(true)} onMouseLeave={() => setVisible(false)} className={`max-w-[255px] w-full ${visible ? 'shadow-md' : 'shadow-sm'} bg-white pb-3 rounded-md`}>
+        <div onMouseEnter={() => setVisible(true)} onMouseLeave={() => setVisible(false)} className={`max-w-[255px] w-full ${visible ? 'shadow-md' : 'shadow-sm'} bg-white pb-3 rounded-md relative`}>
             <Link href={`/product/${item?.id}`}>
             <img className='w-[200px] py-6 h-[200px] object-contain m-auto' src={visible && item?.images[1] ? item?.images[1]?.image : item?.images[0]?.image} alt="" />
             </Link>
@@ -43,6 +47,14 @@ const Card = (item: any) => {
 
                 </div>
             }
+            <div className={`absolute top-4 right-0 ${visible ? 'right-3 block' : 'right-0 hidden'} flex flex-col gap-1.5`}>
+                <p className='bg-secondary-light w-8 h-8 rounded-full border text-secondary-dark flex items-center justify-center'>
+                    <FaRegStar/>
+                </p>
+                <Link href={`/product/${item?.id}`} className='bg-secondary-light w-8 h-8 rounded-full border text-secondary-dark flex items-center justify-center'>
+                    <IoEyeOutline/>
+                </Link>
+            </div>
         </div>
     )
 }
