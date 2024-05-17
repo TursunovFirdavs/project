@@ -29,7 +29,8 @@ const cartReducer = createSlice({
                     if(item.id === action.payload.id) {
                         return {
                             ...item,
-                            productCount: item.productCount + 1
+                            productCount: item.productCount + 1,
+                            totalPrice: (item.productCount - 1) * parseInt(item.price)
                         }
                     }
                     return item
@@ -41,7 +42,8 @@ const cartReducer = createSlice({
                     if(item.id === action.payload.id) {
                         return {
                             ...item,
-                            productCount: item.productCount - 1
+                            productCount: item.productCount - 1,
+                            totalPrice: (item.productCount - 1) * item.price
                         }
                     }
                     return item
