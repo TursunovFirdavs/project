@@ -27,7 +27,7 @@ const Card = (item: any) => {
     }
 
     return (
-        <div onMouseEnter={() => setVisible(true)} onMouseLeave={() => setVisible(false)} className={`max-w-[255px] w-full ${visible ? 'shadow-md' : 'shadow-sm'} bg-white pb-3 rounded-md relative`}>
+        <div onMouseEnter={() => setVisible(true)} onMouseLeave={() => setVisible(false)} className={`sm:max-w-[255px] w-full ${visible ? 'shadow-md' : 'shadow-sm'} bg-white pb-3 rounded-md relative`}>
             <Link href={`/product/${item?.id}`}>
                 <img className='w-[200px] py-6 h-[200px] object-contain m-auto' src={visible && item?.images[1] ? item?.images[1]?.image : item?.images[0]?.image} alt="" />
             </Link>

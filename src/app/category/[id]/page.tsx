@@ -7,7 +7,7 @@ export default function Category(props : any) {
   return (
     <div className='container bg-secondary-light'>
       <div className='py-8 flex gap-10'>
-        <div>
+        <div className='xl:block hidden'>
         <Categories/>
         </div>
         <div>

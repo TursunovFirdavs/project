@@ -27,7 +27,7 @@ const config = {
         "xl": "1100px",
         "lg": "990px",
         "md": "650px",
-        "sm": "520px"
+        "sm": "520px",
       },
       colors: {
         border: "hsl(var(--border))",
