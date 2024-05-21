@@ -1,6 +1,6 @@
 'use client'
 import Link from 'next/link'
-import React from 'react'
+import React, { useState } from 'react'
 import { SlLayers } from "react-icons/sl";
 import { FaRegStar } from "react-icons/fa";
 import { SlHandbag } from "react-icons/sl";
@@ -17,12 +17,20 @@ import {
 } from "@/components/ui/dialog"
 import Categories from '../catecory/Categories';
 import { useSelector } from 'react-redux';
+import { useGetAllProduct } from '@/service/query/useGetAllProduct';
 
 const Navbar = () => {
+    const [search, setSearch] = useState('')
     const { data } = useGetCategories()
+    const { data: products } = useGetAllProduct()
     const { like } = useSelector((state:any) => state.like)
     const { cart } = useSelector((state:any) => state.cart)
-    console.log(like);
+
+    const filteredData = products?.results?.filter((item:any) =>
+        item.title.toLowerCase().includes(search.toLowerCase())
+    );
+    console.log(filteredData);
+    
     
     return (
         <div>
@@ -45,16 +53,28 @@ const Navbar = () => {
                             <p>06-900-6789-00</p>
                         </div>
                     </div>
-                    <form className='border-2 border-secondary-yellow overflow-hidden max-w-[640px] w-full rounded-[30px] flex justify-between items-center'>
+                    <div className='relative'>
+                    <form className='border-2 border-secondary-yellow overflow-hidden w-[640px] rounded-[30px] flex justify-between items-center'>
                         <select className='max-w-[140px] w-full pl-5 pr-2.5 outline-none' name="" id="">
                             <option value="">All category</option>
                             {data?.results.map((item: any) => (
                                 <option key={item.id} value="">{item.title}</option>
                             ))}
                         </select>
-                        <input className='flex-1 pl-3 border-l-2 ml-2.5 outline-none' type="text" placeholder='Search Products...' />
+                        <input value={search} onChange={(e) => setSearch(e.target.value)} className='flex-1 pl-3 border-l-2 ml-2.5 outline-none' type="text" placeholder='Search Products...' />
                         <button className='py-3 w-[120px] px-2.5 bg-secondary-yellow'>Search</button>
                     </form>
+                        {search.length > 1 && 
+                            <div className='absolute top-[60px] w-[50%] ring-[50%] translate-x-[50%] z-10'>
+                                {filteredData?.map((item:any) => (
+                                    <Link onClick={() => setSearch('')} href={`/product/${item.id}`} className='flex gap-3 py-2 px-3 border-b bg-white'>
+                                        <img className='w-5 h-5' src={item.images[0].image} alt="" />
+                                        <p className='text-[14px]'>{item.title}</p>
+                                    </Link>
+                                ))}
+                            </div>
+                        }
+                    </div>
                     <div className='flex text-secondary-dark max-w-[264px] w-full justify-between'>
                         <div className='flex flex-col items-center'>
                             <SlLayers className='text-3xl' />
