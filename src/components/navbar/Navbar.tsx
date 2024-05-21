@@ -100,11 +100,23 @@ const Navbar = () => {
                                 <DialogTitle>
                                 </DialogTitle>
                                 <DialogDescription>
+                                    <div className='relative'>
                                     <form className='mx-5 mt-3 mb-5 flex justify-between border-secondary-yellow border'>
-                                        <input className='outline-none text-black border-none py-2 pl-2' type="text" placeholder='Search products...' />
+                                        <input value={search} onChange={(e) => setSearch(e.target.value)} className='outline-none text-black border-none py-2 pl-2' type="text" placeholder='Search products...' />
                                         <button className='bg-secondary-yellow py-2 px-1.5 text-sm text-black'>Search</button>
                                     </form>
-                                    <Categories />
+                                    {search.length > 1 &&
+                                        <div className='absolute left-5'>
+                                            {filteredData?.map((item:any) => (
+                                                <Link href={`/product/${item.id}`} className='flex items-center bg-white border-b py-1.5 px-2 pr-10 w-full gap-3 z-[100]'>
+                                                    <img className='w-4 h-4' src={item.images[0].image} alt="" />
+                                                    <p >{item.title}</p>
+                                                </Link>
+                                            ))}
+                                        </div>
+                                    }
+                                    </div>
+                                    {search.length < 1 && <Categories />}
                                 </DialogDescription>
                             </DialogHeader>
                         </DialogContent>
