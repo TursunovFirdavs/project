@@ -26,7 +26,7 @@ const config = {
         "2xl": "1450px",
         "xl": "1100px",
         "lg": "990px",
-        "md": "750px",
+        "md": "650px",
         "sm": "520px"
       },
       colors: {

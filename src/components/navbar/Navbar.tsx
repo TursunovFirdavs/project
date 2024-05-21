@@ -16,9 +16,14 @@ import {
     DialogTrigger,
 } from "@/components/ui/dialog"
 import Categories from '../catecory/Categories';
+import { useSelector } from 'react-redux';
 
 const Navbar = () => {
     const { data } = useGetCategories()
+    const { like } = useSelector((state:any) => state.like)
+    const { cart } = useSelector((state:any) => state.cart)
+    console.log(like);
+    
     return (
         <div>
             <div className='container hidden md:flex h-[48px] items-center justify-between text-secondary-dark border-b'>
@@ -87,11 +92,17 @@ const Navbar = () => {
                 </div>
 
             </div>
-            <div className='bg-red-400 2xl:hidden fixed w-full bottom-0 z-[10] flex items-center justify-around py-3'>
+            <div className='bg-white 2xl:hidden fixed max-w-[100%] w-full bottom-0 z-[10] flex items-center justify-around py-3'>
                 <Link href={'/'}><SlUser className='text-xl' /></Link>
-                <Link href={'/liked'}><FaRegStar className='text-xl' /></Link>
+                <Link  className='relative' href={'/liked'}>
+                    <FaRegStar className='text-xl' />
+                    <div className='absolute top-[-6px] right-[-10px] bg-secondary-yellow text-[12px] w-4 h-4 rounded-full flex items-center justify-center'>{like?.length}</div>
+                </Link>
                 <Link href={'/'}><SlLayers className='text-xl' /></Link>
-                <Link href={'/cart'}><SlHandbag className='text-xl' /></Link>
+                <Link className='relative'  href={'/cart'}>
+                    <SlHandbag className='text-xl' />
+                    <div className='absolute top-[-6px] right-[-10px] bg-secondary-yellow text-[12px] w-4 h-4 rounded-full flex items-center justify-center'>{cart?.length}</div>
+                </Link>
             </div>
         </div>
     )

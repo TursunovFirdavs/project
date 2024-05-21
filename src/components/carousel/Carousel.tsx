@@ -13,12 +13,12 @@ import { banner } from "@/types";
 export default function () {
   const { data, isLoading } = useGetBanner()
   
-    return isLoading ? <div className='w-[1155px] h-[525px] flex items-center justify-center'><div className="lds-ripple"><div></div><div></div></div></div> : (
+    return isLoading ? <div className='w-[1155px] xl:h-[525px] md:h-[500px] h-[400px] flex items-center justify-center'><div className="lds-ripple"><div></div><div></div></div></div> : (
       <div className="max-w-[1155px] rounded-sm overflow-hidden w-full">
         <Carousel>
           <CarouselContent>
             {data?.results?.map((item: banner) => (
-              <img className="w-full h-[525px]" src={item.image} alt="" />
+              <img className="w-full xl:h-[525px] md:h-[500px] h-[400px] object-center" src={item.image} alt="" />
             ))}
           </CarouselContent>
           <CarouselPrevious />

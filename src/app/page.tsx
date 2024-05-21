@@ -13,10 +13,12 @@ export default function Home() {
   return (
     <div className="bg-secondary-light">
       <div className="flex justify-between container py-8">
+        <div className="xl:block hidden">
         <Categories />
+        </div>
         <Carousel />
       </div>
-      <div className="container flex justify-between">
+      <div className="container xl:flex hidden justify-between">
         <Banner data={banner}/>
       </div>
       <TopCategory/>
