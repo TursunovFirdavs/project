@@ -23,8 +23,8 @@ const SingleProduct = ({ id }: any) => {
                 <div className='flex flex-col items-center'>
                     <img className='max-w-[714px] w-full max-h-[470px] h-full object-contain' src={data?.images[select].image} alt="" />
                     <div className='flex gap-5 mt-4'>
-                        {data?.images?.map((item: product_images, i: number) => (
-                            <img onClick={() => setSelect(i)} className='md:w-[163px] w-[140px] object-contain' src={item.image} alt="" />
+                        {data?.images?.slice(0,2).map((item: product_images, i: number) => (
+                            <img onClick={() => setSelect(i)} className='md:w-[163px] w-[140px] object-cover' src={item.image} alt="" />
                         ))}
                     </div>
                 </div>

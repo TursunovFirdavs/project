@@ -4,6 +4,7 @@ import "./globals.css";
 import QueryProvider from "@/providers/query-provider";
 import Navbar from "@/components/navbar/Navbar";
 import ReduxProvider from "@/providers/redux-provider";
+import Footer from "@/components/footer/Footer";
 
 const inter = Rubik({ subsets: ["latin"] });
 
@@ -24,6 +25,7 @@ export default function RootLayout({
         <body className={inter.className}>
           <Navbar/>
           <main>{children}</main>
+          <Footer/>
         </body>
       </html>
       </ReduxProvider>
