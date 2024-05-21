@@ -17,6 +17,7 @@ const SubCategories = ({ id }: any) => {
     return (
         <div>
             <h2 className='text-[14px] text-secondary-dark font-medium'>{`Home  /  Category  /  ${data?.title}`}</h2>
+            <div>
             {data?.children?.length &&
                 <div className='flex justify-center md:justify-start gap-[30px] flex-wrap mt-5 mb-10'>
                     {data?.children?.map((item: subCategory) => (
@@ -29,6 +30,7 @@ const SubCategories = ({ id }: any) => {
                     ))}
                 </div>
             }
+            </div>
             <div>
                 <h3 className='text-xl font-semibold mb-6'>Top Products</h3>
                 <div className='flex justify-center flex-wrap md:justify-between gap-y-[35px]'>
