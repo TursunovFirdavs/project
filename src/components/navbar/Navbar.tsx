@@ -49,7 +49,7 @@ const Navbar = () => {
                         <select className='max-w-[140px] w-full pl-5 pr-2.5 outline-none' name="" id="">
                             <option value="">All category</option>
                             {data?.results.map((item: any) => (
-                                <option value="">{item.title}</option>
+                                <option key={item.id} value="">{item.title}</option>
                             ))}
                         </select>
                         <input className='flex-1 pl-3 border-l-2 ml-2.5 outline-none' type="text" placeholder='Search Products...' />

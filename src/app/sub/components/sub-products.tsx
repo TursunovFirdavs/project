@@ -23,7 +23,7 @@ const SubProducts = ({ id }: any) => {
                     :
                     <div className='flex flex-wrap gap-[35px] mt-5'>
                         {product?.results?.map((item: any) => (
-                            <Card {...item} />
+                            <Card key={item.id} {...item} />
                         ))}
                     </div>
 

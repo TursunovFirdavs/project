@@ -18,7 +18,7 @@ export default function () {
         <Carousel>
           <CarouselContent>
             {data?.results?.map((item: banner) => (
-              <img className="w-full xl:h-[525px] md:h-[500px] h-[400px] object-center" src={item.image} alt="" />
+              <img key={item.id} className="w-full xl:h-[525px] md:h-[500px] h-[400px] object-center" src={item.image} alt="" />
             ))}
           </CarouselContent>
           <CarouselPrevious />

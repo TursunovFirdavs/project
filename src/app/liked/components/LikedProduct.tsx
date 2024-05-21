@@ -11,7 +11,7 @@ const LikedProduct = () => {
   return (
     <div className='flex gap-[45px] flex-wrap'>
         {like?.map((item:any) => (
-            <Card {...item} />
+            <Card key={item.id} {...item} />
         ))}
     </div>
   )

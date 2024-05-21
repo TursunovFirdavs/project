@@ -31,7 +31,7 @@ const SingleProduct = ({ id }: any) => {
                     <img className='max-w-[714px] w-full max-h-[470px] h-full object-contain' src={data?.images[select].image} alt="" />
                     <div className='flex gap-5 mt-4'>
                         {data?.images?.slice(0, 2).map((item: product_images, i: number) => (
-                            <img onClick={() => setSelect(i)} className='md:w-[163px] w-[140px] object-cover' src={item.image} alt="" />
+                            <img key={i} onClick={() => setSelect(i)} className='md:w-[163px] w-[140px] object-cover' src={item.image} alt="" />
                         ))}
                     </div>
                 </div>

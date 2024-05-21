@@ -14,13 +14,6 @@ import Link from 'next/link'
 const TopCategory = () => {
     const { data, isLoading } = useGetCategories()
 
-    const texnoSub = data?.results.find((item:any) => item.title == "Home & Kitchen")
-    const texnoId = texnoSub?.children?.find((item:any) => item.title == "Digitalsub")
-    const { data: texno } = useGetProductVariant(texnoId?.id)
-    
-    const chairSub = data?.results.find((item:any) => item.title == "Game & Toy")
-    const chairId = chairSub?.children?.find((item:any) => item.title == "Smartphones")
-    const { data: chair } = useGetProductVariant(chairId?.id)
     const { data: product } = useGetAllProduct()
     console.log(product);
     
@@ -83,8 +76,8 @@ const TopCategory = () => {
                         <div className='h-[1px] bg-gray-300 flex-1'></div>
                     </div>
                     <div className='md:flex justify-between'>
-                        {imgs?.map((item: string) => (
-                            <div className='rounded-sm overflow-hidden bg-white text-center px-1 mt-2 md:mt-0'>
+                        {imgs?.map((item: string, i:number) => (
+                            <div key={i} className='rounded-sm overflow-hidden bg-white text-center px-1 mt-2 md:mt-0'>
                                 <img className='md:w-[217px] w-full' src={item} alt="" />
                                 <p className='text-[12px] text-secondary-dark text-center'>Digital, Game & Toys</p>
                                 <p className='text-[14px] text-secondary-blue mt-1  mb-2'>Recliner syntheti deck chair</p>
@@ -118,7 +111,7 @@ const TopCategory = () => {
                     <p>Smart Phones</p>
                 </div>
             </div>
-            <div className='flex items-start justify-between gap-5'>
+            <div className='flex items-center justify-between gap-5'>
                 <img className='max-w-[280px] hidden 2xl:block' src="https://demo.lion-themes.net/amera/wp-content/uploads/2019/07/img-tab1.jpg" alt="" />
                 <Item data={product?.results.slice(1,7)} />
             </div>
